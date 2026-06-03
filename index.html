@@ -62,8 +62,18 @@ color:#ff2d7f;
 font-size:34px;
 font-weight:800;
 text-align:center;
-margin-top:30px;
+margin-top:25px;
 color:#c10059;
+}
+
+.musicBtn{
+position:absolute;
+top:14px;
+right:14px;
+border:none;
+padding:10px;
+border-radius:50%;
+z-index:99;
 }
 
 /* balloons */
@@ -84,17 +94,17 @@ transition:.4s;
 .balloon::after{
 content:"";
 position:absolute;
-width:2px;
 height:35px;
+width:2px;
 background:#999;
 left:39px;
 bottom:-30px;
 }
 
-.b1{left:8%;top:18%;background:#ffc4d9;}
-.b2{right:8%;top:22%;background:#c1efef;}
-.b3{left:12%;bottom:22%;background:#dcc6ff;}
-.b4{right:12%;bottom:20%;background:#ffd2dd;}
+.b1{left:8%;top:20%;background:#ffc4d8;}
+.b2{right:8%;top:24%;background:#c2f0ef;}
+.b3{left:14%;bottom:22%;background:#dcc6ff;}
+.b4{right:14%;bottom:20%;background:#ffd0da;}
 
 .pop{
 opacity:0;
@@ -105,27 +115,28 @@ pointer-events:none;
 /* cake */
 
 .card{
+flex:1;
 margin-top:20px;
-background:#f7dce6;
+background:#f7dce7;
 border-radius:28px;
 padding:20px;
-flex:1;
 text-align:center;
 }
 
 .cake{
 font-size:130px;
-margin-top:60px;
+margin-top:50px;
+cursor:pointer;
 }
 
 .tap{
-margin-top:30px;
-background:#fff;
+margin-top:25px;
 padding:16px;
-border-radius:20px;
+background:white;
+border-radius:18px;
 }
 
-/* bouquet */
+/* collage */
 
 .collage{
 flex:1;
@@ -133,66 +144,116 @@ display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
-gap:14px;
-position:relative;
+gap:10px;
 }
 
 .bouquet{
-width:240px;
-max-width:70vw;
+width:140px;
+max-width:40vw;
+}
+
+.photoGrid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:10px;
+
+width:100%;
+
+max-width:320px;
+
+}
+
+.photo{
+
+width:100%;
+
+aspect-ratio:1/1;
+
+object-fit:cover;
+
+border-radius:20px;
+
+border:4px solid white;
+
+box-shadow:0 4px 10px rgba(0,0,0,.15);
+
 }
 
 .notes{
+
 display:flex;
+
 flex-wrap:wrap;
+
 justify-content:center;
-gap:10px;
-padding:0 10px;
+
+gap:8px;
+
 }
 
 .note{
-background:#fff;
-padding:10px 14px;
-border-radius:18px;
-font-size:14px;
+
+background:white;
+
+padding:8px 12px;
+
+border-radius:16px;
+
+font-size:13px;
+
 }
 
 .btn{
-margin:14px auto 20px;
+
+margin:15px auto;
+
 padding:14px 45px;
+
 border:none;
+
 border-radius:999px;
+
 background:#ff0a7a;
-color:#fff;
+
+color:white;
+
 font-size:18px;
+
 }
 
 /* final */
 
 .final{
+
 flex:1;
+
 display:flex;
+
 flex-direction:column;
+
 justify-content:center;
+
 align-items:center;
-text-align:center;
+
 gap:18px;
+
+text-align:center;
+
 }
 
-.musicBtn{
-position:absolute;
-right:14px;
-top:14px;
-border:none;
-padding:10px;
-border-radius:50%;
-z-index:99;
-}
+/* hearts */
 
 .heart{
+
 position:absolute;
+
 pointer-events:none;
+
 animation:rise 5s linear forwards;
+
 }
 
 @keyframes rise{
@@ -220,19 +281,22 @@ opacity:0;
 
 <div class="app">
 
-<button id="musicBtn" class="musicBtn">🎵</button>
+<button class="musicBtn" id="musicBtn">🎵</button>
 
-<!-- page 1 -->
+<!-- PAGE 1 -->
 
 <div class="page active" id="p1">
 
 <div class="top">
+
 <div class="pill">Sara ❤️</div>
+
 <div class="pill">1/4</div>
+
 </div>
 
 <div class="title">
-Pop all balloons
+Pop all balloons 🎈
 </div>
 
 <div class="balloonArea">
@@ -257,7 +321,7 @@ onclick="popBalloon(this)">
 
 </div>
 
-<!-- page 2 -->
+<!-- PAGE 2 -->
 
 <div class="page" id="p2">
 
@@ -278,12 +342,12 @@ Tap cake to continue ❤️
 
 </div>
 
-<!-- page 3 -->
+<!-- PAGE 3 -->
 
 <div class="page" id="p3">
 
 <h2 style="text-align:center;color:#ff0a7a">
-Your Rose Bouquet 🌹
+Memories With Sara ❤️
 </h2>
 
 <div class="collage">
@@ -291,13 +355,21 @@ Your Rose Bouquet 🌹
 <img src="bouquet.png"
 class="bouquet">
 
+<div class="photoGrid">
+
+<img src="photo1.jpg" class="photo">
+<img src="photo2.jpg" class="photo">
+<img src="photo3.jpg" class="photo">
+<img src="photo4.jpg" class="photo">
+
+</div>
+
 <div class="notes">
 
 <div class="note">Forever Yours 🤍</div>
 <div class="note">Beautiful Soul 💕</div>
 <div class="note">My Sunshine ☀️</div>
 <div class="note">Happy Birthday 💖</div>
-<div class="note">Sara ❤️</div>
 
 </div>
 
@@ -310,7 +382,7 @@ Continue →
 
 </div>
 
-<!-- page 4 -->
+<!-- PAGE 4 -->
 
 <div class="page" id="p4">
 
@@ -391,11 +463,7 @@ function showPage(id){
 
 document.querySelectorAll(".page")
 
-.forEach(page=>{
-
-page.classList.remove("active");
-
-});
+.forEach(p=>p.classList.remove("active"));
 
 document.getElementById(id)
 
