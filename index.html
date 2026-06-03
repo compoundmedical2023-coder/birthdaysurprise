@@ -1,10 +1,10 @@
-```html id="33m1wq"
+```html id="piv3m1"
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport"
-content="width=device-width,initial-scale=1,maximum-scale=1">
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
 <title>Happy Birthday Sara ❤️</title>
 
@@ -14,26 +14,23 @@ content="width=device-width,initial-scale=1,maximum-scale=1">
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial;
--webkit-tap-highlight-color:transparent;
+font-family:Arial,sans-serif;
 }
 
 body{
-background:#f8dfe8;
-height:100vh;
+background:#f7dce7;
 overflow:hidden;
-display:flex;
-justify-content:center;
-align-items:center;
+height:100vh;
 }
 
 .app{
 width:100vw;
 max-width:430px;
 height:100vh;
+margin:auto;
 position:relative;
 overflow:hidden;
-background:linear-gradient(#fdebf2,#ffd9e7);
+background:linear-gradient(#fdeaf1,#ffdbe8);
 }
 
 .page{
@@ -46,7 +43,7 @@ padding:18px;
 
 .active{
 display:block;
-animation:fade .5s;
+animation:fade .4s ease;
 }
 
 @keyframes fade{
@@ -61,20 +58,22 @@ justify-content:space-between;
 
 .pill{
 background:white;
-padding:12px 20px;
+padding:10px 18px;
 border-radius:999px;
 font-weight:bold;
-color:#ff2a7b;
+color:#ff2d7f;
 box-shadow:0 3px 10px rgba(0,0,0,.08);
 }
 
 .title{
-margin-top:45px;
 text-align:center;
-font-size:36px;
+font-size:34px;
 font-weight:800;
-color:#c10059;
+margin-top:40px;
+color:#c00059;
 }
+
+/* balloons */
 
 .balloon{
 position:absolute;
@@ -82,7 +81,7 @@ width:90px;
 height:115px;
 border-radius:50%;
 cursor:pointer;
-animation:float 3s infinite ease-in-out;
+transition:.4s;
 }
 
 .balloon:after{
@@ -91,98 +90,114 @@ position:absolute;
 height:40px;
 width:2px;
 background:#999;
-left:45px;
+left:44px;
 bottom:-35px;
 }
 
-.b1{left:8%;top:28%;background:#ffc4d9;}
-.b2{right:8%;top:32%;background:#c0f1ef;}
-.b3{left:14%;bottom:26%;background:#dcc5ff;}
-.b4{right:14%;bottom:24%;background:#ffc9d7;}
-
-@keyframes float{
-50%{transform:translateY(-12px);}
-}
+.b1{left:10%;top:28%;background:#ffc3d8;}
+.b2{right:10%;top:32%;background:#bdeeee;}
+.b3{left:15%;bottom:24%;background:#dbc6ff;}
+.b4{right:15%;bottom:22%;background:#ffced8;}
 
 .pop{
 opacity:0;
-transform:scale(1.8);
-transition:.4s;
+transform:scale(1.7);
 }
+
+/* cake */
 
 .card{
 margin-top:20px;
 height:78vh;
 background:#f8dce7;
-border-radius:30px;
+border-radius:28px;
 padding:20px;
 text-align:center;
 }
 
 .cakeTitle{
-font-size:34px;
+font-size:32px;
 font-weight:bold;
-color:#98004b;
+color:#9b004c;
 }
 
 .cake{
-font-size:170px;
-margin-top:80px;
+font-size:150px;
+margin-top:90px;
 cursor:pointer;
 }
 
 .tap{
 background:white;
-padding:18px;
-border-radius:22px;
-margin-top:55px;
-font-size:22px;
+padding:16px;
+border-radius:20px;
+margin-top:50px;
+font-size:20px;
 }
+
+/* bouquet collage */
 
 .collageTitle{
 text-align:center;
 font-size:30px;
-color:#ff0a7a;
+color:#ff0b7a;
 margin-top:10px;
 }
 
 .bouquet{
-width:300px;
+width:280px;
 position:absolute;
 left:50%;
 top:50%;
 transform:translate(-50%,-50%);
-filter:drop-shadow(0 10px 20px rgba(0,0,0,.2));
 }
 
 .note{
 position:absolute;
 background:white;
-padding:12px;
+padding:10px 12px;
 border-radius:18px;
-box-shadow:0 4px 10px rgba(0,0,0,.08);
-font-size:15px;
-max-width:150px;
+font-size:14px;
+box-shadow:0 3px 10px rgba(0,0,0,.08);
+max-width:140px;
 }
 
-.n1{left:10px;top:120px}
-.n2{right:10px;top:160px}
-.n3{left:10px;bottom:240px}
-.n4{right:10px;bottom:220px}
-.n5{left:50%;bottom:120px;transform:translateX(-50%)}
+.n1{left:8px;top:130px;}
+.n2{right:8px;top:170px;}
+.n3{left:8px;bottom:240px;}
+.n4{right:8px;bottom:220px;}
+.n5{
+left:50%;
+bottom:120px;
+transform:translateX(-50%);
+}
+
+/* buttons */
 
 .btn{
 position:absolute;
-bottom:35px;
 left:50%;
+bottom:35px;
 transform:translateX(-50%);
 border:none;
-padding:18px 60px;
-border-radius:40px;
-font-size:22px;
+padding:16px 55px;
+border-radius:999px;
+font-size:20px;
 background:#ff0a7a;
 color:white;
 }
+
+.musicBtn{
+position:absolute;
+top:15px;
+right:15px;
+z-index:1000;
+border:none;
+padding:10px 14px;
+border-radius:999px;
+}
+
+/* final */
 
 .final{
 height:100%;
@@ -194,28 +209,24 @@ text-align:center;
 padding:20px;
 }
 
+/* hearts */
+
 .heart{
 position:absolute;
-font-size:22px;
-animation:rise 6s linear infinite;
+font-size:20px;
+animation:rise 6s linear forwards;
+pointer-events:none;
 }
 
 @keyframes rise{
-from{transform:translateY(100vh)}
+from{
+transform:translateY(100vh);
+opacity:1;
+}
 to{
-transform:translateY(-100px);
+transform:translateY(-120px);
 opacity:0;
 }
-}
-
-.musicBtn{
-position:absolute;
-top:20px;
-right:20px;
-z-index:999;
-border:none;
-padding:10px 15px;
-border-radius:30px;
 }
 
 </style>
@@ -229,9 +240,7 @@ border-radius:30px;
 
 <div class="app">
 
-<button class="musicBtn" id="musicBtn">
-🎵
-</button>
+<button class="musicBtn" id="musicBtn">🎵</button>
 
 <!-- PAGE 1 -->
 
@@ -245,19 +254,14 @@ border-radius:30px;
 
 </div>
 
-<div class="title">
+<div class="title">Pop all balloons</div>
 
-Pop all balloons
-
-</div>
-
-<div class="balloon b1" onclick="pop(this)"></div>
-<div class="balloon b2" onclick="pop(this)"></div>
-<div class="balloon b3" onclick="pop(this)"></div>
-<div class="balloon b4" onclick="pop(this)"></div>
+<div class="balloon b1" onclick="popBalloon(this)"></div>
+<div class="balloon b2" onclick="popBalloon(this)"></div>
+<div class="balloon b3" onclick="popBalloon(this)"></div>
+<div class="balloon b4" onclick="popBalloon(this)"></div>
 
 </div>
-
 
 <!-- PAGE 2 -->
 
@@ -266,38 +270,27 @@ Pop all balloons
 <div class="card">
 
 <div class="cakeTitle">
-
 Blow Candle Sara ✨
-
 </div>
 
-<div class="cake"
-
-onclick="show('p3')">
-
+<div class="cake" onclick="showPage('p3')">
 🎂
-
 </div>
 
 <div class="tap">
-
-Tap cake ❤️
-
+Tap cake to continue ❤️
 </div>
 
 </div>
 
 </div>
-
 
 <!-- PAGE 3 -->
 
 <div class="page" id="p3">
 
 <h2 class="collageTitle">
-
 Your Rose Bouquet 🌹
-
 </h2>
 
 <div class="note n1">Forever Yours 🤍</div>
@@ -306,18 +299,14 @@ Your Rose Bouquet 🌹
 <div class="note n4">Happy Birthday 💖</div>
 <div class="note n5">Sara ❤️</div>
 
-<img src="bouquet.png" class="bouquet">
+<img src="bouquet.png" class="bouquet" alt="Bouquet">
 
 <button class="btn"
-
-onclick="show('p4')">
-
+onclick="showPage('p4')">
 Continue →
-
 </button>
 
 </div>
-
 
 <!-- PAGE 4 -->
 
@@ -325,28 +314,21 @@ Continue →
 
 <div class="final">
 
-<div style="font-size:120px">
+<div style="font-size:110px">
 🎁
 </div>
 
-<h1 style="font-size:46px;color:#c10059">
-
+<h1 style="font-size:42px;color:#c00059">
 Happy Birthday Sara ❤️
-
 </h1>
 
 <p style="font-size:22px;margin-top:20px">
-
 May your smile stay forever ✨
-
 </p>
 
 <button class="btn"
-
 onclick="location.reload()">
-
 Replay
-
 </button>
 
 </div>
@@ -357,57 +339,58 @@ Replay
 
 <script>
 
+const music=document.getElementById("bgmusic");
+const musicBtn=document.getElementById("musicBtn");
+
 document.addEventListener("click",()=>{
 
-document.getElementById("bgmusic").play();
+music.play().catch(()=>{});
 
 },{once:true});
 
-let play=true;
+musicBtn.addEventListener("click",()=>{
 
-musicBtn.onclick=function(){
+if(music.paused){
 
-let m=document.getElementById("bgmusic");
+music.play();
 
-if(play){
-
-m.pause();
-
-this.innerHTML="▶️";
+musicBtn.innerHTML="🎵";
 
 }else{
 
-m.play();
+music.pause();
 
-this.innerHTML="🎵";
-
-}
-
-play=!play;
+musicBtn.innerHTML="▶️";
 
 }
 
-let count=0;
+});
 
-function pop(x){
+let popped=0;
 
-x.classList.add("pop");
+function popBalloon(balloon){
 
-count++;
+balloon.classList.add("pop");
 
-if(count===4){
+popped++;
 
-setTimeout(()=>show("p2"),500);
+if(popped===4){
+
+setTimeout(()=>{
+
+showPage("p2");
+
+},500);
 
 }
 
 }
 
-function show(id){
+function showPage(id){
 
 document.querySelectorAll(".page")
 
-.forEach(x=>x.classList.remove("active"));
+.forEach(page=>page.classList.remove("active"));
 
 document.getElementById(id)
 
@@ -417,19 +400,21 @@ document.getElementById(id)
 
 setInterval(()=>{
 
-let h=document.createElement("div");
+const heart=document.createElement("div");
 
-h.className="heart";
+heart.className="heart";
 
-h.innerHTML="💗";
+heart.innerHTML="💗";
 
-h.style.left=Math.random()*100+"%";
+heart.style.left=Math.random()*100+"%";
 
-document.body.appendChild(h);
+document.querySelector(".app")
 
-setTimeout(()=>h.remove(),6000);
+.appendChild(heart);
 
-},600);
+setTimeout(()=>heart.remove(),6000);
+
+},700);
 
 </script>
 
