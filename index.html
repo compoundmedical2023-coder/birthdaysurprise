@@ -1,423 +1,170 @@
-```html id="piv3m1"
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
-<title>Happy Birthday Sara ❤️</title>
-
-<style>
-
-*{
+```css
+html,body{
 margin:0;
 padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+width:100%;
+height:100%;
+overflow:hidden;
 }
 
 body{
 background:#f7dce7;
-overflow:hidden;
-height:100vh;
 }
 
 .app{
-width:100vw;
+
+width:100%;
+
 max-width:430px;
-height:100vh;
+
+height:100dvh;
+
 margin:auto;
+
 position:relative;
+
 overflow:hidden;
+
 background:linear-gradient(#fdeaf1,#ffdbe8);
+
 }
+
+/* page */
 
 .page{
-display:none;
-position:absolute;
+
 width:100%;
-height:100%;
-padding:18px;
+
+height:100dvh;
+
+padding:4vw;
+
 }
 
-.active{
-display:block;
-animation:fade .4s ease;
-}
-
-@keyframes fade{
-from{opacity:0}
-to{opacity:1}
-}
-
-.top{
-display:flex;
-justify-content:space-between;
-}
-
-.pill{
-background:white;
-padding:10px 18px;
-border-radius:999px;
-font-weight:bold;
-color:#ff2d7f;
-box-shadow:0 3px 10px rgba(0,0,0,.08);
-}
+/* title */
 
 .title{
-text-align:center;
-font-size:34px;
-font-weight:800;
-margin-top:40px;
-color:#c00059;
+
+font-size:8vw;
+
+margin-top:6vh;
+
 }
 
 /* balloons */
 
 .balloon{
-position:absolute;
-width:90px;
-height:115px;
-border-radius:50%;
-cursor:pointer;
-transition:.4s;
+
+width:20vw;
+
+height:26vw;
+
+max-width:90px;
+
+max-height:115px;
+
 }
 
 .balloon:after{
-content:"";
-position:absolute;
-height:40px;
-width:2px;
-background:#999;
-left:44px;
-bottom:-35px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+height:8vw;
+
+bottom:-7vw;
+
 }
 
-.b1{left:10%;top:28%;background:#ffc3d8;}
-.b2{right:10%;top:32%;background:#bdeeee;}
-.b3{left:15%;bottom:24%;background:#dbc6ff;}
-.b4{right:15%;bottom:22%;background:#ffced8;}
-
-.pop{
-opacity:0;
-transform:scale(1.7);
-}
+.b1{left:8%;top:26%;}
+.b2{right:8%;top:30%;}
+.b3{left:12%;bottom:24%;}
+.b4{right:12%;bottom:22%;}
 
 /* cake */
 
 .card{
-margin-top:20px;
-height:78vh;
-background:#f8dce7;
-border-radius:28px;
-padding:20px;
-text-align:center;
-}
 
-.cakeTitle{
-font-size:32px;
-font-weight:bold;
-color:#9b004c;
+height:76vh;
+
+padding:5vw;
+
 }
 
 .cake{
-font-size:150px;
-margin-top:90px;
-cursor:pointer;
+
+font-size:34vw;
+
+margin-top:8vh;
+
 }
 
 .tap{
-background:white;
-padding:16px;
-border-radius:20px;
-margin-top:50px;
-font-size:20px;
+
+font-size:5vw;
+
+margin-top:5vh;
+
 }
 
-/* bouquet collage */
-
-.collageTitle{
-text-align:center;
-font-size:30px;
-color:#ff0b7a;
-margin-top:10px;
-}
+/* bouquet */
 
 .bouquet{
-width:280px;
-position:absolute;
-left:50%;
+
+width:72vw;
+
+max-width:300px;
+
 top:50%;
+
+left:50%;
+
 transform:translate(-50%,-50%);
+
 }
 
 .note{
-position:absolute;
-background:white;
-padding:10px 12px;
-border-radius:18px;
-font-size:14px;
-box-shadow:0 3px 10px rgba(0,0,0,.08);
-max-width:140px;
+
+font-size:3.5vw;
+
+max-width:34vw;
+
 }
 
-.n1{left:8px;top:130px;}
-.n2{right:8px;top:170px;}
-.n3{left:8px;bottom:240px;}
-.n4{right:8px;bottom:220px;}
+.n1{left:2vw;top:18vh;}
+.n2{right:2vw;top:24vh;}
+.n3{left:2vw;bottom:26vh;}
+.n4{right:2vw;bottom:24vh;}
 .n5{
 left:50%;
-bottom:120px;
+bottom:12vh;
 transform:translateX(-50%);
 }
 
-/* buttons */
+/* button */
 
 .btn{
-position:absolute;
-left:50%;
-bottom:35px;
-transform:translateX(-50%);
-border:none;
-padding:16px 55px;
-border-radius:999px;
-font-size:20px;
-background:#ff0a7a;
-color:white;
-}
 
-.musicBtn{
-position:absolute;
-top:15px;
-right:15px;
-z-index:1000;
-border:none;
-padding:10px 14px;
-border-radius:999px;
+bottom:4vh;
+
+font-size:5vw;
+
+padding:14px 12vw;
+
 }
 
 /* final */
 
-.final{
-height:100%;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-text-align:center;
-padding:20px;
-}
+.final h1{
 
-/* hearts */
-
-.heart{
-position:absolute;
-font-size:20px;
-animation:rise 6s linear forwards;
-pointer-events:none;
-}
-
-@keyframes rise{
-from{
-transform:translateY(100vh);
-opacity:1;
-}
-to{
-transform:translateY(-120px);
-opacity:0;
-}
-}
-
-</style>
-</head>
-
-<body>
-
-<audio id="bgmusic" loop>
-<source src="birthday-song.mp3" type="audio/mpeg">
-</audio>
-
-<div class="app">
-
-<button class="musicBtn" id="musicBtn">🎵</button>
-
-<!-- PAGE 1 -->
-
-<div class="page active" id="p1">
-
-<div class="top">
-
-<div class="pill">Sara ❤️</div>
-
-<div class="pill">1/4</div>
-
-</div>
-
-<div class="title">Pop all balloons</div>
-
-<div class="balloon b1" onclick="popBalloon(this)"></div>
-<div class="balloon b2" onclick="popBalloon(this)"></div>
-<div class="balloon b3" onclick="popBalloon(this)"></div>
-<div class="balloon b4" onclick="popBalloon(this)"></div>
-
-</div>
-
-<!-- PAGE 2 -->
-
-<div class="page" id="p2">
-
-<div class="card">
-
-<div class="cakeTitle">
-Blow Candle Sara ✨
-</div>
-
-<div class="cake" onclick="showPage('p3')">
-🎂
-</div>
-
-<div class="tap">
-Tap cake to continue ❤️
-</div>
-
-</div>
-
-</div>
-
-<!-- PAGE 3 -->
-
-<div class="page" id="p3">
-
-<h2 class="collageTitle">
-Your Rose Bouquet 🌹
-</h2>
-
-<div class="note n1">Forever Yours 🤍</div>
-<div class="note n2">Beautiful Soul 💕</div>
-<div class="note n3">My Sunshine ☀️</div>
-<div class="note n4">Happy Birthday 💖</div>
-<div class="note n5">Sara ❤️</div>
-
-<img src="bouquet.png" class="bouquet" alt="Bouquet">
-
-<button class="btn"
-onclick="showPage('p4')">
-Continue →
-</button>
-
-</div>
-
-<!-- PAGE 4 -->
-
-<div class="page" id="p4">
-
-<div class="final">
-
-<div style="font-size:110px">
-🎁
-</div>
-
-<h1 style="font-size:42px;color:#c00059">
-Happy Birthday Sara ❤️
-</h1>
-
-<p style="font-size:22px;margin-top:20px">
-May your smile stay forever ✨
-</p>
-
-<button class="btn"
-onclick="location.reload()">
-Replay
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-<script>
-
-const music=document.getElementById("bgmusic");
-const musicBtn=document.getElementById("musicBtn");
-
-document.addEventListener("click",()=>{
-
-music.play().catch(()=>{});
-
-},{once:true});
-
-musicBtn.addEventListener("click",()=>{
-
-if(music.paused){
-
-music.play();
-
-musicBtn.innerHTML="🎵";
-
-}else{
-
-music.pause();
-
-musicBtn.innerHTML="▶️";
+font-size:10vw !important;
 
 }
 
-});
+.final p{
 
-let popped=0;
-
-function popBalloon(balloon){
-
-balloon.classList.add("pop");
-
-popped++;
-
-if(popped===4){
-
-setTimeout(()=>{
-
-showPage("p2");
-
-},500);
+font-size:5vw !important;
 
 }
-
-}
-
-function showPage(id){
-
-document.querySelectorAll(".page")
-
-.forEach(page=>page.classList.remove("active"));
-
-document.getElementById(id)
-
-.classList.add("active");
-
-}
-
-setInterval(()=>{
-
-const heart=document.createElement("div");
-
-heart.className="heart";
-
-heart.innerHTML="💗";
-
-heart.style.left=Math.random()*100+"%";
-
-document.querySelector(".app")
-
-.appendChild(heart);
-
-setTimeout(()=>heart.remove(),6000);
-
-},700);
-
-</script>
-
-</body>
-</html>
 ```
