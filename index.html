@@ -1,170 +1,432 @@
-```css
-html,body{
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Happy Birthday Sara ❤️</title>
+
+<style>
+
+*{
 margin:0;
 padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+html,body{
 width:100%;
 height:100%;
 overflow:hidden;
-}
-
-body{
-background:#f7dce7;
+background:#f8dce7;
 }
 
 .app{
-
 width:100%;
-
 max-width:430px;
-
 height:100dvh;
-
 margin:auto;
-
+background:linear-gradient(#fdeaf1,#ffdce8);
 position:relative;
-
 overflow:hidden;
-
-background:linear-gradient(#fdeaf1,#ffdbe8);
-
 }
-
-/* page */
 
 .page{
-
+display:none;
 width:100%;
-
-height:100dvh;
-
-padding:4vw;
-
+height:100%;
+padding:16px;
+flex-direction:column;
 }
 
-/* title */
+.active{
+display:flex;
+}
+
+.top{
+display:flex;
+justify-content:space-between;
+}
+
+.pill{
+background:#fff;
+padding:10px 18px;
+border-radius:999px;
+font-weight:bold;
+color:#ff2d7f;
+}
 
 .title{
-
-font-size:8vw;
-
-margin-top:6vh;
-
+font-size:34px;
+font-weight:800;
+text-align:center;
+margin-top:30px;
+color:#c10059;
 }
 
 /* balloons */
 
+.balloonArea{
+flex:1;
+position:relative;
+}
+
 .balloon{
-
-width:20vw;
-
-height:26vw;
-
-max-width:90px;
-
-max-height:115px;
-
+position:absolute;
+width:80px;
+height:100px;
+border-radius:50%;
+transition:.4s;
 }
 
-.balloon:after{
-
-left:50%;
-
-transform:translateX(-50%);
-
-height:8vw;
-
-bottom:-7vw;
-
+.balloon::after{
+content:"";
+position:absolute;
+width:2px;
+height:35px;
+background:#999;
+left:39px;
+bottom:-30px;
 }
 
-.b1{left:8%;top:26%;}
-.b2{right:8%;top:30%;}
-.b3{left:12%;bottom:24%;}
-.b4{right:12%;bottom:22%;}
+.b1{left:8%;top:18%;background:#ffc4d9;}
+.b2{right:8%;top:22%;background:#c1efef;}
+.b3{left:12%;bottom:22%;background:#dcc6ff;}
+.b4{right:12%;bottom:20%;background:#ffd2dd;}
+
+.pop{
+opacity:0;
+transform:scale(1.7);
+pointer-events:none;
+}
 
 /* cake */
 
 .card{
-
-height:76vh;
-
-padding:5vw;
-
+margin-top:20px;
+background:#f7dce6;
+border-radius:28px;
+padding:20px;
+flex:1;
+text-align:center;
 }
 
 .cake{
-
-font-size:34vw;
-
-margin-top:8vh;
-
+font-size:130px;
+margin-top:60px;
 }
 
 .tap{
-
-font-size:5vw;
-
-margin-top:5vh;
-
+margin-top:30px;
+background:#fff;
+padding:16px;
+border-radius:20px;
 }
 
 /* bouquet */
 
+.collage{
+flex:1;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:14px;
+position:relative;
+}
+
 .bouquet{
+width:240px;
+max-width:70vw;
+}
 
-width:72vw;
-
-max-width:300px;
-
-top:50%;
-
-left:50%;
-
-transform:translate(-50%,-50%);
-
+.notes{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+padding:0 10px;
 }
 
 .note{
-
-font-size:3.5vw;
-
-max-width:34vw;
-
+background:#fff;
+padding:10px 14px;
+border-radius:18px;
+font-size:14px;
 }
-
-.n1{left:2vw;top:18vh;}
-.n2{right:2vw;top:24vh;}
-.n3{left:2vw;bottom:26vh;}
-.n4{right:2vw;bottom:24vh;}
-.n5{
-left:50%;
-bottom:12vh;
-transform:translateX(-50%);
-}
-
-/* button */
 
 .btn{
-
-bottom:4vh;
-
-font-size:5vw;
-
-padding:14px 12vw;
-
+margin:14px auto 20px;
+padding:14px 45px;
+border:none;
+border-radius:999px;
+background:#ff0a7a;
+color:#fff;
+font-size:18px;
 }
 
 /* final */
 
-.final h1{
+.final{
+flex:1;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+gap:18px;
+}
 
-font-size:10vw !important;
+.musicBtn{
+position:absolute;
+right:14px;
+top:14px;
+border:none;
+padding:10px;
+border-radius:50%;
+z-index:99;
+}
+
+.heart{
+position:absolute;
+pointer-events:none;
+animation:rise 5s linear forwards;
+}
+
+@keyframes rise{
+
+from{
+transform:translateY(100%);
+opacity:1;
+}
+
+to{
+transform:translateY(-120vh);
+opacity:0;
+}
 
 }
 
-.final p{
+</style>
+</head>
 
-font-size:5vw !important;
+<body>
+
+<audio id="music" loop>
+<source src="birthday-song.mp3" type="audio/mpeg">
+</audio>
+
+<div class="app">
+
+<button id="musicBtn" class="musicBtn">🎵</button>
+
+<!-- page 1 -->
+
+<div class="page active" id="p1">
+
+<div class="top">
+<div class="pill">Sara ❤️</div>
+<div class="pill">1/4</div>
+</div>
+
+<div class="title">
+Pop all balloons
+</div>
+
+<div class="balloonArea">
+
+<div class="balloon b1"
+onclick="popBalloon(this)">
+</div>
+
+<div class="balloon b2"
+onclick="popBalloon(this)">
+</div>
+
+<div class="balloon b3"
+onclick="popBalloon(this)">
+</div>
+
+<div class="balloon b4"
+onclick="popBalloon(this)">
+</div>
+
+</div>
+
+</div>
+
+<!-- page 2 -->
+
+<div class="page" id="p2">
+
+<div class="card">
+
+<h2>Blow Candle Sara ✨</h2>
+
+<div class="cake"
+onclick="showPage('p3')">
+🎂
+</div>
+
+<div class="tap">
+Tap cake to continue ❤️
+</div>
+
+</div>
+
+</div>
+
+<!-- page 3 -->
+
+<div class="page" id="p3">
+
+<h2 style="text-align:center;color:#ff0a7a">
+Your Rose Bouquet 🌹
+</h2>
+
+<div class="collage">
+
+<img src="bouquet.png"
+class="bouquet">
+
+<div class="notes">
+
+<div class="note">Forever Yours 🤍</div>
+<div class="note">Beautiful Soul 💕</div>
+<div class="note">My Sunshine ☀️</div>
+<div class="note">Happy Birthday 💖</div>
+<div class="note">Sara ❤️</div>
+
+</div>
+
+</div>
+
+<button class="btn"
+onclick="showPage('p4')">
+Continue →
+</button>
+
+</div>
+
+<!-- page 4 -->
+
+<div class="page" id="p4">
+
+<div class="final">
+
+<div style="font-size:100px">
+🎁
+</div>
+
+<h1>
+Happy Birthday Sara ❤️
+</h1>
+
+<p>
+May your smile stay forever ✨
+</p>
+
+<button class="btn"
+onclick="location.reload()">
+Replay
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const music=document.getElementById("music");
+
+document.body.addEventListener("click",()=>{
+
+music.play().catch(()=>{});
+
+},{once:true});
+
+document.getElementById("musicBtn")
+
+.onclick=()=>{
+
+if(music.paused){
+
+music.play();
+
+}else{
+
+music.pause();
 
 }
+
+};
+
+let popped=0;
+
+function popBalloon(balloon){
+
+if(balloon.classList.contains("pop")) return;
+
+balloon.classList.add("pop");
+
+popped++;
+
+if(popped===4){
+
+setTimeout(()=>{
+
+showPage("p2");
+
+},500);
+
+}
+
+}
+
+function showPage(id){
+
+document.querySelectorAll(".page")
+
+.forEach(page=>{
+
+page.classList.remove("active");
+
+});
+
+document.getElementById(id)
+
+.classList.add("active");
+
+}
+
+setInterval(()=>{
+
+const h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="💗";
+
+h.style.left=Math.random()*100+"%";
+
+document.querySelector(".app")
+
+.appendChild(h);
+
+setTimeout(()=>{
+
+h.remove();
+
+},5000);
+
+},1200);
+
+</script>
+
+</body>
+</html>
 ```
