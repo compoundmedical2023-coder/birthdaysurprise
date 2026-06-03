@@ -1,12 +1,12 @@
-```html id="l5x4zu"
+```html id="33m1wq"
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport"
-content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+content="width=device-width,initial-scale=1,maximum-scale=1">
 
-<title>Sara Birthday</title>
+<title>Happy Birthday Sara ❤️</title>
 
 <style>
 
@@ -19,271 +19,203 @@ font-family:Arial;
 }
 
 body{
-
 background:#f8dfe8;
-
 height:100vh;
-
 overflow:hidden;
-
 display:flex;
-
 justify-content:center;
-
 align-items:center;
-
 }
 
 .app{
-
 width:100vw;
-
 max-width:430px;
-
 height:100vh;
-
-max-height:932px;
-
 position:relative;
-
 overflow:hidden;
-
-background:linear-gradient(#fdeaf1,#ffdbe7);
-
+background:linear-gradient(#fdebf2,#ffd9e7);
 }
 
 .page{
-
 display:none;
-
 position:absolute;
-
 width:100%;
-
 height:100%;
-
-padding:4vw;
-
-overflow:hidden;
-
+padding:18px;
 }
 
 .active{
-
 display:block;
+animation:fade .5s;
+}
 
+@keyframes fade{
+from{opacity:0}
+to{opacity:1}
 }
 
 .top{
-
 display:flex;
-
 justify-content:space-between;
-
-align-items:center;
-
 }
 
 .pill{
-
-padding:12px 18px;
-
 background:white;
-
+padding:12px 20px;
 border-radius:999px;
-
-font-size:4vw;
-
 font-weight:bold;
-
+color:#ff2a7b;
 box-shadow:0 3px 10px rgba(0,0,0,.08);
-
-color:#ff2a7a;
-
 }
 
 .title{
-
-margin-top:7vh;
-
+margin-top:45px;
 text-align:center;
-
-font-size:8vw;
-
-font-weight:700;
-
-color:#c00058;
-
+font-size:36px;
+font-weight:800;
+color:#c10059;
 }
 
 .balloon{
-
 position:absolute;
-
-width:20vw;
-
-height:26vw;
-
-max-width:90px;
-
-max-height:120px;
-
+width:90px;
+height:115px;
 border-radius:50%;
-
+cursor:pointer;
+animation:float 3s infinite ease-in-out;
 }
 
 .balloon:after{
-
 content:"";
-
 position:absolute;
-
+height:40px;
 width:2px;
-
-height:10vw;
-
 background:#999;
-
-left:50%;
-
-bottom:-9vw;
-
+left:45px;
+bottom:-35px;
 }
 
-.b1{
+.b1{left:8%;top:28%;background:#ffc4d9;}
+.b2{right:8%;top:32%;background:#c0f1ef;}
+.b3{left:14%;bottom:26%;background:#dcc5ff;}
+.b4{right:14%;bottom:24%;background:#ffc9d7;}
 
-left:8%;
-
-top:26%;
-
-background:#ffc7da;
-
+@keyframes float{
+50%{transform:translateY(-12px);}
 }
 
-.b2{
-
-right:8%;
-
-top:30%;
-
-background:#b8f0ea;
-
-}
-
-.b3{
-
-left:14%;
-
-bottom:24%;
-
-background:#dec4ff;
-
-}
-
-.b4{
-
-right:14%;
-
-bottom:22%;
-
-background:#ffb7d1;
-
+.pop{
+opacity:0;
+transform:scale(1.8);
+transition:.4s;
 }
 
 .card{
-
-margin-top:4vh;
-
+margin-top:20px;
 height:78vh;
-
 background:#f8dce7;
+border-radius:30px;
+padding:20px;
+text-align:center;
+}
 
-border-radius:32px;
+.cakeTitle{
+font-size:34px;
+font-weight:bold;
+color:#98004b;
+}
 
-padding:5vw;
+.cake{
+font-size:170px;
+margin-top:80px;
+cursor:pointer;
+}
 
+.tap{
+background:white;
+padding:18px;
+border-radius:22px;
+margin-top:55px;
+font-size:22px;
+}
+
+.collageTitle{
+text-align:center;
+font-size:30px;
+color:#ff0a7a;
+margin-top:10px;
 }
 
 .bouquet{
-
+width:300px;
 position:absolute;
-
-width:72vw;
-
-max-width:320px;
-
 left:50%;
-
 top:50%;
-
 transform:translate(-50%,-50%);
-
+filter:drop-shadow(0 10px 20px rgba(0,0,0,.2));
 }
 
 .note{
-
 position:absolute;
-
 background:white;
-
 padding:12px;
-
 border-radius:18px;
-
-font-size:3.7vw;
-
-max-width:38vw;
-
 box-shadow:0 4px 10px rgba(0,0,0,.08);
-
+font-size:15px;
+max-width:150px;
 }
 
-.n1{left:3%;top:18%;}
-.n2{right:3%;top:24%;}
-.n3{left:4%;bottom:28%;}
-.n4{right:4%;bottom:26%;}
-.n5{left:50%;bottom:12%;transform:translateX(-50%);}
+.n1{left:10px;top:120px}
+.n2{right:10px;top:160px}
+.n3{left:10px;bottom:240px}
+.n4{right:10px;bottom:220px}
+.n5{left:50%;bottom:120px;transform:translateX(-50%)}
 
 .btn{
-
 position:absolute;
-
-bottom:4vh;
-
+bottom:35px;
 left:50%;
-
 transform:translateX(-50%);
-
-padding:16px 50px;
-
 border:none;
-
-border-radius:999px;
-
-font-size:5vw;
-
+padding:18px 60px;
+border-radius:40px;
+font-size:22px;
 background:#ff0a7a;
-
 color:white;
-
 }
 
 .final{
-
 height:100%;
-
 display:flex;
-
 justify-content:center;
-
 align-items:center;
-
 flex-direction:column;
-
 text-align:center;
+padding:20px;
+}
 
-padding:8vw;
+.heart{
+position:absolute;
+font-size:22px;
+animation:rise 6s linear infinite;
+}
 
+@keyframes rise{
+from{transform:translateY(100vh)}
+to{
+transform:translateY(-100px);
+opacity:0;
+}
+}
+
+.musicBtn{
+position:absolute;
+top:20px;
+right:20px;
+z-index:999;
+border:none;
+padding:10px 15px;
+border-radius:30px;
 }
 
 </style>
@@ -291,11 +223,215 @@ padding:8vw;
 
 <body>
 
+<audio id="bgmusic" loop>
+<source src="birthday-song.mp3" type="audio/mpeg">
+</audio>
+
 <div class="app">
 
-<!-- all your pages go inside this app container -->
+<button class="musicBtn" id="musicBtn">
+🎵
+</button>
+
+<!-- PAGE 1 -->
+
+<div class="page active" id="p1">
+
+<div class="top">
+
+<div class="pill">Sara ❤️</div>
+
+<div class="pill">1/4</div>
 
 </div>
+
+<div class="title">
+
+Pop all balloons
+
+</div>
+
+<div class="balloon b1" onclick="pop(this)"></div>
+<div class="balloon b2" onclick="pop(this)"></div>
+<div class="balloon b3" onclick="pop(this)"></div>
+<div class="balloon b4" onclick="pop(this)"></div>
+
+</div>
+
+
+<!-- PAGE 2 -->
+
+<div class="page" id="p2">
+
+<div class="card">
+
+<div class="cakeTitle">
+
+Blow Candle Sara ✨
+
+</div>
+
+<div class="cake"
+
+onclick="show('p3')">
+
+🎂
+
+</div>
+
+<div class="tap">
+
+Tap cake ❤️
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PAGE 3 -->
+
+<div class="page" id="p3">
+
+<h2 class="collageTitle">
+
+Your Rose Bouquet 🌹
+
+</h2>
+
+<div class="note n1">Forever Yours 🤍</div>
+<div class="note n2">Beautiful Soul 💕</div>
+<div class="note n3">My Sunshine ☀️</div>
+<div class="note n4">Happy Birthday 💖</div>
+<div class="note n5">Sara ❤️</div>
+
+<img src="bouquet.png" class="bouquet">
+
+<button class="btn"
+
+onclick="show('p4')">
+
+Continue →
+
+</button>
+
+</div>
+
+
+<!-- PAGE 4 -->
+
+<div class="page" id="p4">
+
+<div class="final">
+
+<div style="font-size:120px">
+🎁
+</div>
+
+<h1 style="font-size:46px;color:#c10059">
+
+Happy Birthday Sara ❤️
+
+</h1>
+
+<p style="font-size:22px;margin-top:20px">
+
+May your smile stay forever ✨
+
+</p>
+
+<button class="btn"
+
+onclick="location.reload()">
+
+Replay
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+document.addEventListener("click",()=>{
+
+document.getElementById("bgmusic").play();
+
+},{once:true});
+
+let play=true;
+
+musicBtn.onclick=function(){
+
+let m=document.getElementById("bgmusic");
+
+if(play){
+
+m.pause();
+
+this.innerHTML="▶️";
+
+}else{
+
+m.play();
+
+this.innerHTML="🎵";
+
+}
+
+play=!play;
+
+}
+
+let count=0;
+
+function pop(x){
+
+x.classList.add("pop");
+
+count++;
+
+if(count===4){
+
+setTimeout(()=>show("p2"),500);
+
+}
+
+}
+
+function show(id){
+
+document.querySelectorAll(".page")
+
+.forEach(x=>x.classList.remove("active"));
+
+document.getElementById(id)
+
+.classList.add("active");
+
+}
+
+setInterval(()=>{
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="💗";
+
+h.style.left=Math.random()*100+"%";
+
+document.body.appendChild(h);
+
+setTimeout(()=>h.remove(),6000);
+
+},600);
+
+</script>
 
 </body>
 </html>
