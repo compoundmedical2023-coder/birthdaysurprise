@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,8 +75,6 @@ border-radius:50%;
 z-index:99;
 }
 
-/* balloons */
-
 .balloonArea{
 flex:1;
 position:relative;
@@ -89,6 +86,7 @@ width:80px;
 height:100px;
 border-radius:50%;
 transition:.4s;
+cursor:pointer;
 }
 
 .balloon::after{
@@ -110,6 +108,42 @@ bottom:-30px;
 opacity:0;
 transform:scale(1.7);
 pointer-events:none;
+}
+
+/* Message at balloon position */
+
+.blastMessage{
+position:absolute;
+background:white;
+padding:10px 14px;
+border-radius:16px;
+font-size:14px;
+font-weight:bold;
+color:#ff0a7a;
+max-width:140px;
+text-align:center;
+box-shadow:0 4px 12px rgba(0,0,0,.15);
+animation:showMsg 2s forwards;
+z-index:20;
+}
+
+@keyframes showMsg{
+
+0%{
+opacity:0;
+transform:scale(.5);
+}
+
+20%{
+opacity:1;
+transform:scale(1);
+}
+
+100%{
+opacity:0;
+transform:translateY(-40px);
+}
+
 }
 
 /* cake */
@@ -153,107 +187,60 @@ max-width:40vw;
 }
 
 .photoGrid{
-
 display:grid;
-
 grid-template-columns:1fr 1fr;
-
 gap:10px;
-
 width:100%;
-
 max-width:320px;
-
 }
 
 .photo{
-
 width:100%;
-
 aspect-ratio:1/1;
-
 object-fit:cover;
-
 border-radius:20px;
-
 border:4px solid white;
-
 box-shadow:0 4px 10px rgba(0,0,0,.15);
-
 }
 
 .notes{
-
 display:flex;
-
 flex-wrap:wrap;
-
 justify-content:center;
-
 gap:8px;
-
 }
 
 .note{
-
 background:white;
-
 padding:8px 12px;
-
 border-radius:16px;
-
 font-size:13px;
-
 }
 
 .btn{
-
 margin:15px auto;
-
 padding:14px 45px;
-
 border:none;
-
 border-radius:999px;
-
 background:#ff0a7a;
-
 color:white;
-
 font-size:18px;
-
 }
-
-/* final */
 
 .final{
-
 flex:1;
-
 display:flex;
-
 flex-direction:column;
-
 justify-content:center;
-
 align-items:center;
-
 gap:18px;
-
 text-align:center;
-
 }
 
-/* hearts */
-
 .heart{
-
 position:absolute;
-
 pointer-events:none;
-
 animation:rise 5s linear forwards;
-
 }
 
 @keyframes rise{
@@ -301,21 +288,10 @@ Pop all balloons 🎈
 
 <div class="balloonArea">
 
-<div class="balloon b1"
-onclick="popBalloon(this)">
-</div>
-
-<div class="balloon b2"
-onclick="popBalloon(this)">
-</div>
-
-<div class="balloon b3"
-onclick="popBalloon(this)">
-</div>
-
-<div class="balloon b4"
-onclick="popBalloon(this)">
-</div>
+<div class="balloon b1" onclick="popBalloon(this)"></div>
+<div class="balloon b2" onclick="popBalloon(this)"></div>
+<div class="balloon b3" onclick="popBalloon(this)"></div>
+<div class="balloon b4" onclick="popBalloon(this)"></div>
 
 </div>
 
@@ -329,8 +305,7 @@ onclick="popBalloon(this)">
 
 <h2>Blow Candle Sara ✨</h2>
 
-<div class="cake"
-onclick="showPage('p3')">
+<div class="cake" onclick="showPage('p3')">
 🎂
 </div>
 
@@ -352,8 +327,7 @@ Memories With Sara ❤️
 
 <div class="collage">
 
-<img src="bouquet.png"
-class="bouquet">
+<img src="bouquet.png" class="bouquet">
 
 <div class="photoGrid">
 
@@ -375,8 +349,7 @@ class="bouquet">
 
 </div>
 
-<button class="btn"
-onclick="showPage('p4')">
+<button class="btn" onclick="showPage('p4')">
 Continue →
 </button>
 
@@ -400,8 +373,7 @@ Happy Birthday Sara ❤️
 May your smile stay forever ✨
 </p>
 
-<button class="btn"
-onclick="location.reload()">
+<button class="btn" onclick="location.reload()">
 Replay
 </button>
 
@@ -413,29 +385,12 @@ Replay
 
 <script>
 
-const music=document.getElementById("music");
-
-document.body.addEventListener("click",()=>{
-
-music.play().catch(()=>{});
-
-},{once:true});
-
-document.getElementById("musicBtn")
-
-.onclick=()=>{
-
-if(music.paused){
-
-music.play();
-
-}else{
-
-music.pause();
-
-}
-
-};
+const messages=[
+"You’re my happiness ❤️",
+"You make life beautiful ✨",
+"Thank you for being mine 💕",
+"Happy Birthday My Love 🎂"
+];
 
 let popped=0;
 
@@ -443,17 +398,37 @@ function popBalloon(balloon){
 
 if(balloon.classList.contains("pop")) return;
 
+const rect=balloon.getBoundingClientRect();
+
+const parent=document.querySelector(".balloonArea")
+.getBoundingClientRect();
+
 balloon.classList.add("pop");
+
+const msg=document.createElement("div");
+
+msg.className="blastMessage";
+
+msg.innerText=messages[popped];
+
+msg.style.left=(rect.left-parent.left)+"px";
+
+msg.style.top=(rect.top-parent.top)+"px";
+
+document.querySelector(".balloonArea")
+.appendChild(msg);
+
+setTimeout(()=>{
+msg.remove();
+},2000);
 
 popped++;
 
 if(popped===4){
 
 setTimeout(()=>{
-
 showPage("p2");
-
-},500);
+},2200);
 
 }
 
@@ -462,14 +437,30 @@ showPage("p2");
 function showPage(id){
 
 document.querySelectorAll(".page")
-
 .forEach(p=>p.classList.remove("active"));
 
 document.getElementById(id)
-
 .classList.add("active");
 
 }
+
+const music=document.getElementById("music");
+
+document.body.addEventListener("click",()=>{
+
+music.play().catch(()=>{});
+
+},{once:true});
+
+document.getElementById("musicBtn").onclick=()=>{
+
+if(music.paused){
+music.play();
+}else{
+music.pause();
+}
+
+};
 
 setInterval(()=>{
 
@@ -482,13 +473,10 @@ h.innerHTML="💗";
 h.style.left=Math.random()*100+"%";
 
 document.querySelector(".app")
-
 .appendChild(h);
 
 setTimeout(()=>{
-
 h.remove();
-
 },5000);
 
 },1200);
@@ -497,4 +485,3 @@ h.remove();
 
 </body>
 </html>
-```
