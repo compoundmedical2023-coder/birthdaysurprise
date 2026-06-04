@@ -424,9 +424,13 @@ Happy Birthday Sara ❤️
 One Final Surprise ✨
 </p>
 
-<div class="bigEnvelope" onclick="openLetter()">
+<div class="bigEnvelope">
 💌
 </div>
+
+<button class="btn" id="openBtn" onclick="openLetter()">
+OPEN ❤️
+</button>
 
 <div class="letter" id="letter">
 
@@ -447,7 +451,7 @@ Happy Birthday My Love ❤️✨
 <br><br>
 
 <b>
-I Love You From Non-Chalant ❤️
+I Love You From Vishal ❤️
 </b>
 
 </p>
@@ -540,6 +544,12 @@ function openLetter(){
 
 document.getElementById("letter")
 .style.display="block";
+
+document.querySelector(".bigEnvelope")
+.style.display="none";
+
+document.getElementById("openBtn")
+.style.display="none";
 
 const music=document.getElementById("music");
 
